@@ -36,8 +36,13 @@ body {
   --color-neutral-pale-blue: hsl(236, 100%, 87%);
 }
 
+.App {
+  display: flex;
+  flex-direction: row;
+}
+
 .profile {
-  width: 20rem;
+  width: 18rem;
   background-color: var(--color-primary-blue);
   border-radius: 1rem 1rem 0 0;
   padding: 2rem;
@@ -62,7 +67,7 @@ body {
 }
 
 .time-frame {
-  width: 20rem;
+  width: 18rem;
   background-color: var(--color-neutral-dark-blue);
   border-radius: 0 0 1rem 1rem;
   padding: 2rem;
@@ -86,4 +91,10 @@ body {
 
 .time-frame > ul > li::selection {
   color: #fff;
+}
+
+main {
+  border: 1px solid red;
+  width: 20rem;
+  height: 20rem;
 }
