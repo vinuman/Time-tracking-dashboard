@@ -1,26 +1,29 @@
 import { useState, useEffect } from "react";
-import datajson from "./data.json";
-import Work from "./icon-work.svg";
+
+import Work from "./Work";
+import Play from "./Play";
+import Study from "./Study";
+import Exercise from "./Exercise";
+import Social from "./Social";
+import Selfcare from "./Selfcare";
 
 const Main = ({ selectedTimeFrame }) => {
   const [data, setData] = useState([]);
-  const [jsonData, setJsonData] = useState(data);
 
-  useEffect(() => {
+  /*   useEffect(() => {
     setData(datajson);
-  }, []);
+  }, []); */
+  console.log(selectedTimeFrame);
 
   return (
-    <main>
-      <div className="box">
-        <div className="image-container">
-          <img src={Work}></img>
-        </div>
-        <div className="container">
-          <h1>{selectedTimeFrame}</h1>
-        </div>
-      </div>
-    </main>
+    <div className="main">
+      <Work selectedTimeFrame={selectedTimeFrame} />
+      <Play selectedTimeFrame={selectedTimeFrame} />
+      <Study selectedTimeFrame={selectedTimeFrame} />
+      <Exercise selectedTimeFrame={selectedTimeFrame} />
+      <Social selectedTimeFrame={selectedTimeFrame} />
+      <Selfcare selectedTimeFrame={selectedTimeFrame} />
+    </div>
   );
 };
 

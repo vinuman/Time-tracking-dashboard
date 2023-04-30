@@ -1,24 +1,42 @@
 import profile from "./image-jeremy.png";
 import { useState } from "react";
 
-const Nav = () => {
-  const [selectedTimeFrame, setSelectedTimeFrame] = useState("daily");
-  const handleButtonClick = (timeframe) => {
-    setSelectedTimeFrame(timeframe);
-  };
-
+const Nav = ({
+  selectedTimeFrame,
+  setSelectedTimeFrame,
+  handleButtonClick,
+  selectedButton,
+  setselectedButton,
+}) => {
   return (
-    <nav selectedTimeFrame={selectedTimeFrame}>
+    <nav>
       <div className="profile">
         <img src={profile}></img>
-        <p>Report for</p>
-        <h1>Jeremy Robson</h1>
+        <div className="profile-name">
+          <p>Report for</p>
+          <h1>Jeremy Robson</h1>
+        </div>
       </div>
       <div className="time-frame">
         <ul>
-          <li onClick={() => handleButtonClick("daily")}>Daily</li>
-          <li onClick={() => handleButtonClick("weekly")}>Weekly</li>
-          <li onClick={() => handleButtonClick("monthly")}>Monthly</li>
+          <li
+            className={selectedButton == "daily" ? "selected" : ""}
+            onClick={() => handleButtonClick("daily")}
+          >
+            Daily
+          </li>
+          <li
+            className={selectedButton == "weekly" ? "selected" : ""}
+            onClick={() => handleButtonClick("weekly")}
+          >
+            Weekly
+          </li>
+          <li
+            className={selectedButton == "monthly" ? "selected" : ""}
+            onClick={() => handleButtonClick("monthly")}
+          >
+            Monthly
+          </li>
         </ul>
       </div>
     </nav>
