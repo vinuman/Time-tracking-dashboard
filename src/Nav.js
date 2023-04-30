@@ -3,12 +3,12 @@ import { useState } from "react";
 
 const Nav = () => {
   const [selectedTimeFrame, setSelectedTimeFrame] = useState("daily");
-  const handleButtonClick = (timeFrame) => {
-    setSelectedTimeFrame(timeFrame);
+  const handleButtonClick = (timeframe) => {
+    setSelectedTimeFrame(timeframe);
   };
 
   return (
-    <nav>
+    <nav selectedTimeFrame={selectedTimeFrame}>
       <div className="profile">
         <img src={profile}></img>
         <p>Report for</p>
